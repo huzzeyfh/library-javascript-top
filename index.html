@@ -1,18 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="library">
-        <h1>My Library</h1>
-        <div class="books">
-            <!-- Books will be displayed here -->
-        </div>
+      <h1>My Library</h1>
+      <div class="add">
+        <dialog id="add-book-dialog">
+          <form>
+            <div class="form">
+              <div>
+                <label for="book-title"> Book's title:</label>
+                <input
+                  id="book-title"
+                  name="book-title"
+                  type="text"
+                  placeholder='example: "Atomic Habits"'
+                />
+              </div>
+
+              <div>
+                <label for="book-author">Book's author:</label>
+                <input
+                  id="book-author"
+                  name="book-author"
+                  type="text"
+                  placeholder='example: "James Clear"'
+                />
+              </div>
+
+              <div>
+                <label for="book-pages"> Book's pages:</label>
+                <input
+                  id="book-pages"
+                  name="book-pages"
+                  type="number"
+                  placeholder="number"
+                />
+              </div>
+              
+            </div>
+
+            <div>
+              <button value="cancel" formmethod="dialog">Cancel</button>
+
+              <button id="submit-btn" value="default">Submit</button>
+            </div>
+
+          </form>
+        </dialog>
+        <p>
+          <button id="add-book">Add a book</button>
+        </p>
+      </div>
+      <output></output>
+      <div class="books">
+        <!-- Books will be displayed here -->
+      </div>
     </div>
-</body>
+  </body>
 </html>
