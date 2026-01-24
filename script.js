@@ -17,18 +17,19 @@ const bookRead = document.querySelector("#book-read");
 
 const pages = Number(bookPages.value);
 
-function Book(title, author, pages, read) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
-  this.id = crypto.randomUUID();
+class Book {
+  constructor(title, author, pages, read) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+    this.id = crypto.randomUUID();
+  }
+
+  toggleRead() {
+    this.read = !this.read;
+  }
 }
-
-Book.prototype.toggleRead = function() {
-  this.read = !this.read;
-};
-
 
 //functions
 
@@ -83,7 +84,6 @@ function renderLibrary() {
   });
 }
 
-
 addBook.addEventListener("click", () => {
   theDialog.showModal();
 });
@@ -91,7 +91,12 @@ addBook.addEventListener("click", () => {
 submit.addEventListener("click", (event) => {
   event.preventDefault();
 
-  addBookToLibrary(bookTitle.value, bookAuthor.value, bookPages.value, bookRead.checked);
+  addBookToLibrary(
+    bookTitle.value,
+    bookAuthor.value,
+    bookPages.value,
+    bookRead.checked,
+  );
   renderLibrary();
   form.reset();
   console.log(myLibrary);
