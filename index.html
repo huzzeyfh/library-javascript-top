@@ -1,71 +1,69 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
     <title>Document</title>
   </head>
   <body>
-    <div class="library">
-      <h1>My Library</h1>
-      <div class="add">
-        <dialog id="add-book-dialog">
-          <form>
-            <div class="form">
-              <div>
-                <label for="book-title"> Book's title:</label>
-                <input
-                  id="book-title"
-                  name="book-title"
-                  type="text"
-                  placeholder='example: "Atomic Habits"'
-                />
-              </div>
-
-              <div>
-                <label for="book-author">Book's author:</label>
-                <input
-                  id="book-author"
-                  name="book-author"
-                  type="text"
-                  placeholder='example: "James Clear"'
-                />
-              </div>
-
-              <div>
-                <label for="book-pages"> Book's pages:</label>
-                <input
-                  id="book-pages"
-                  name="book-pages"
-                  type="number"
-                  placeholder="number"
-                />
-              </div>
-
-              <div>
-                <label for="book-read">Have you read it?</label>
-                <input id="book-read" name="book-read" type="checkbox">
-              </div>
-
-            </div>
-
-            <div>
-              <button value="cancel" formmethod="dialog">Cancel</button>
-
-              <button id="submit-btn" value="default">Submit</button>
-            </div>
-          </form>
-        </dialog>
-        <p>
-          <button id="add-book">Add a book</button>
-        </p>
-      </div>
-      <output></output>
-      <div class="books">
-        <!-- Books will be displayed here -->
-      </div>
+    <!-- dialog -->
+    <div class="btnDialog">
+      <button command="show-modal" commandfor="dialogForm">Add a book</button>
     </div>
+
+    <dialog id="dialogForm">
+      <p>Fill this form to add your book</p>
+
+      <!-- book form -->
+      <div class="divForm">
+        <form action="" id="bookForm">
+          <!-- input form -->
+          <div class="formInput">
+            <div class="inputTitle">
+              <label for="title">Title</label>
+              <input
+                type="text"
+                id="title"
+                name="title"
+                placeholder='ex: "Harry Potter"'
+                required
+              />
+            </div>
+
+            <div class="inputAuthor">
+              <label for="author">Author</label>
+              <input
+                type="text"
+                name="author"
+                id="author"
+                placeholder='ex: "J.K Rowling"'
+                required
+              />
+            </div>
+
+            <div class="inputPage">
+              <label for="page">Pages</label>
+              <input
+                type="number"
+                id="page"
+                name="page"
+                placeholder="ex: 320 pages"
+                required
+              />
+            </div>
+
+            <div class="checkRead">
+              <label for="read">Have you read it?</label>
+              <input type="checkbox" id="read" name="read" value="true" />
+            </div>
+          </div>
+          <!-- END of input form -->
+
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+      <!-- END of book form -->
+    </dialog>
   </body>
 </html>
